@@ -282,8 +282,8 @@ One has no future if one couldn't teach themself
 | 正  | `+6`              | 6                              |                                                              |
 | 绝对值 | `abs(-1)`         | 1                           | [`abs()`](https://docs.python.org/3/library/functions.html#abs) |
 | 转换为整数| `int(3.14)`       | 3                        | [`int()`](https://docs.python.org/3/library/functions.html#int) |
-| 转换为浮点数 | `float(3)`        | 3.0                   | [`float()`](https://docs.python.org/3/library/functions.html#float) |
-| 商余 | `divmod(7, 3)`    | 2, 1                         | [`divmod()`](https://docs.python.org/3/library/functions.html#divmod) |
+| 转换为浮点数 | `float(3)`        | 3.0                   | [`float()`](https://docs.python.org/3/library/functions.html#float) | 
+| 商余 | `divmod(7, 3)`    | 2, 1                         | [`divmod()`](https://docs.python.org/3/library/functions.html#divmod) | 
 | 幂 | `pow(2, 10)`      | 1024                          | [`pow()`](https://docs.python.org/3/library/functions.html#pow) |
 | 幂 | `3 ** 2`          | 9                             |                                                              |
 
@@ -304,15 +304,15 @@ One has no future if one couldn't teach themself
     - **元组**（Tuple）
     - **集合**（Set）
     - **字典**（Dictionary）
-    - ![](../images/python-containers-final.png)
+    - ![](../images/python-containers-final.png) 
 - 1.1. 迭代（Iterate）
     - for c in 'Python':
       print(c)
 - 1.2. 列表（List）
     - 1.2.1. 列表的生成
         - a_list = []
-        - b_list = [1, 2, 3]
-        - list(), or list(iterable)            # 这是 Type Casting
+        - b_list = [1, 2, 3] 
+        - list(), or list(iterable)            # 这是 Type Casting 
         - [(expression with x) for x in iterable]
     - 1.2.2. 列表的操作符
     - 1.2.3. 根据索引提取列表元素
@@ -323,16 +323,19 @@ One has no future if one couldn't teach themself
         > * `min()`
     - 1.2.5. Methods
         - 字符串常量和 range() 都是不可变的（Immutable）；而列表则是可变类型（Mutable type），所以，它最起码可以被排序 —— 使用 sort() Method：
-        - 可变序列还有一系列可用的 Methods：a.append()，a.clear()，a.copy()，a.extend(t)，a.insert(i，x)，a.pop([i])，a.remove(x)，a.reverse()……
+        - 可变序列还有一系列可用的 Methods：a.append()，a.clear()，a.copy()，a.extend(t)，a.insert(i，x)，a.pop([i])，a.remove(x)，a.reverse()……  
         - .copy() 和'='方法区别，.copy()创建的副本是一个新的对象，对副本的修改不会影响原始对象，而赋值操作符 = 创建的是一个新的引用，新引用和原始引用指向同一个对象，因此对其中一个的修改会影响另一个。
     - 1.2.6 小结
         - ![](../images/list-concepts.png)
-     
-- 1.3. 元组（Tuple）
-    - 注意：创建单个元素的元组，无论是否使用圆括号，在那唯一的元素后面一定要补上一个逗号 ,
-    - 元组是不可变序列，所以，你没办法从里面删除元素。
-    - 但是，你可以在末尾追加元素。
-    - 所以，严格意义上，对元组来讲，“不可变” 的意思是说，“当前已有部分不可变”……
-    - 初学者总是很好奇 List 和 Tuple 的区别。首先是使用场景，在将来需要更改的时候，创建 List ；在将来不需要更改的时候，创建 Tuple。其次，从计算机的角度来看，Tuple 相对于 List 占用更小的内存。
-- 1.4. 集合（Set）
-- 
+         
+    - 1.3. 元组（Tuple）
+        - 注意：创建单个元素的元组，无论是否使用圆括号，在那唯一的元素后面一定要补上一个逗号 ,
+        - 元组是不可变序列，所以，你没办法从里面删除元素。
+        - 但是，你可以在末尾追加元素。
+        - 所以，严格意义上，对元组来讲，“不可变” 的意思是说，“当前已有部分不可变”……
+        - 初学者总是很好奇 List 和 Tuple 的区别。首先是使用场景，在将来需要更改的时候，创建 List ；在将来不需要更改的时候，创建 Tuple。其次，从计算机的角度来看，Tuple 相对于 List 占用更小的内存。
+    - 1.4. 集合（Set）
+        - 这个容器类型与列表不同的地方在于，首先它*不包含重合元素*，其次它是*无序*的；进而，集合又分为两种，Set，*可变的*，Frozen Set，*不可变的*。
+        - 创建空集合注意点：空集合要用set()，而不能用{}
+    - 1.4.2 操作
+        - 把序列转成集合就等于去重
