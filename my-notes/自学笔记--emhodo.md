@@ -78,7 +78,7 @@ One has no future if one couldn't teach themself
     - 布尔值 区别大小写 true True 不是一回事
 - 1.3 逻辑操作符
     - | 比较操作符 | 意义     | 示例             | 布尔值  |
-    - | ----------| -------- | ---------------- | ------- |
+    - | ----------| -------- | ---------------- | ------- | 
     - | `==`      | 等于     | `1 == 2`         | `False` |
     - | `!=`      | 不等于   | `1 != 2`         | `True`  |
     - | `>`       | 大于     | `1 > 2`          | `False` |
@@ -143,7 +143,7 @@ One has no future if one couldn't teach themself
     > Here are most of the built-in objects considered `False`:
     > 
     > > * constants defined to be false: `None` and `False`.
-    > > * zero of any numeric type: `0`, `0.0`, `0j`, `Decimal(0)`, `Fraction(0, 1)`
+    > > * zero of any numeric type: `0`, `0.0`, `0j`, `Decimal(0)`, `Fraction(0, 1)` 
     > > * empty sequences and collections: `''`, `()`, `[]`, `{}`, `set()`, `range(0)`
     > 每个变量或者常量，除了它们的值之外，同时还相当于有一个对应的布尔值。
 ## PART.1.E.3 流程控制
@@ -160,7 +160,7 @@ One has no future if one couldn't teach themself
 - for 循环
     - Python 语言中，`for` 循环不使用其它语言中那样的计数器，取而代之的是 `range()` 这个我称其为 “整数等差数列生成器” 的函数。
       ```python
-        for a in range(10):
+        for a in range(10): 
             
             print(f'value of a: {a}') #每次 a 的值都不同，从 0 递增至 9
       ```
@@ -335,4 +335,4 @@ One has no future if one couldn't teach themself
     - 所以，严格意义上，对元组来讲，“不可变” 的意思是说，“当前已有部分不可变”……
     - 初学者总是很好奇 List 和 Tuple 的区别。首先是使用场景，在将来需要更改的时候，创建 List ；在将来不需要更改的时候，创建 Tuple。其次，从计算机的角度来看，Tuple 相对于 List 占用更小的内存。
 - 1.4. 集合（Set）
-- 测试
+- 
