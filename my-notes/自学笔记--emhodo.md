@@ -34,7 +34,7 @@ One has no future if one couldn't teach themself
 ## git 功能的学习（版本控制器）
 - 注册
  > - git config --global user.name your_name  注册名字 可以任意
- > - git config --global user.mail yourl_mail 注册邮箱 可以任意
+ > - git config --global user.mail yourl_mail 注册邮箱 可以任意 
 - 代码初始化,2个方法：
   > - git clone+github链接（白嫖别人的代码）  
   > - git init （初始化仓库）
@@ -303,7 +303,7 @@ One has no future if one couldn't teach themself
     - **列表**（List）
     - **元组**（Tuple）
     - **集合**（Set）
-    - **字典**（Dictionary）
+    - **字典**（Dictionary） 
     - ![](../images/python-containers-final.png) 
 - 1.1. 迭代（Iterate）
     - for c in 'Python':
@@ -313,20 +313,20 @@ One has no future if one couldn't teach themself
         - a_list = []
         - b_list = [1, 2, 3] 
         - list(), or list(iterable)            # 这是 Type Casting 
-        - [(expression with x) for x in iterable]
+        - [(expression with x) for x in iterable] 
     - 1.2.2. 列表的操作符
     - 1.2.3. 根据索引提取列表元素
         - 需要注意的地方是：列表（List）是可变序列，而字符串（str）是不可变序列，所以，对字符串来说，虽然也可以根据索引提取，但没办法根据索引删除或者替换。
     - 1.2.4. 列表可用的内建函数
-        > * `len()`
-        > * `max()`
+        > * `len()` 
+        > * `max()` 
         > * `min()`
     - 1.2.5. Methods
         - 字符串常量和 range() 都是不可变的（Immutable）；而列表则是可变类型（Mutable type），所以，它最起码可以被排序 —— 使用 sort() Method：
-        - 可变序列还有一系列可用的 Methods：a.append()，a.clear()，a.copy()，a.extend(t)，a.insert(i，x)，a.pop([i])，a.remove(x)，a.reverse()……  
+        - 可变序列还有一系列可用的 Methods：a.append()，a.clear()，a.copy()，a.extend(t)，a.insert(i，x)，a.pop([i])，a.remove(x)，a.reverse()……    
         - .copy() 和'='方法区别，.copy()创建的副本是一个新的对象，对副本的修改不会影响原始对象，而赋值操作符 = 创建的是一个新的引用，新引用和原始引用指向同一个对象，因此对其中一个的修改会影响另一个。
     - 1.2.6 小结
-        - ![](../images/list-concepts.png)
+        - ![](../images/list-concepts.png)  
          
     - 1.3. 元组（Tuple）
         - 注意：创建单个元素的元组，无论是否使用圆括号，在那唯一的元素后面一定要补上一个逗号 ,
@@ -339,3 +339,63 @@ One has no future if one couldn't teach themself
         - 创建空集合注意点：空集合要用set()，而不能用{}
     - 1.4.2 操作
         - 把序列转成集合就等于去重
+        - 对于集合，推荐更多使用 Methods 而不是操作符的主要原因是：更易读 —— 对人来说，因为有意义、有用处的代码终将需要人去维护。
+
+| 意义 | 操作符 |Methods | Methods 相当于 |
+| - | -| - |- |
+| 并集 | <code>&#124;</code> | `set.union(*others)` | <code>set &#124; other &#124; ...</code> |  
+| 交集 | `&` | `set.intersection(*others)`|\`set & other & ... \` | 
+| 差集 | `-` |\` set.difference(\*others)\`| `set - other - ...` |  
+| 对称差集 | `^` | `set.symmetric_difference(other)` | `set ^ other` | 
+
+
+- 1.4.3. 逻辑运算
+- 1.4.4. 更新
+    - add(elem) 把 elem 加入集合
+    - remove(elem) 从集合中删除 elem；如果集合中不包含该 elem，会产生 KeyError 错误。
+    - discard(elem) 如果该元素存在于集合中，删除它。
+    - pop() 从集合中随机删除一个元素，并返回删除的元素的值，针对空集合做此操作会产生 KeyError 错误。
+    - clear() 从集合中删除所有元素。
+    - set.update(*others)
+    - set.intersection_update(*others)
+    - set.difference_update(*others)
+    - set.symmetric_difference_update(other)
+- 1.4.5. 冻结集合 还有一种集合，叫做冻结集合（Frozen Set），Frozen Set 之于 Set，正如 Tuple 之于 List，前者是不可变容器（Immutable），后者是可变容器（Mutable），无非是为了节省内存使用而设计的类别。
+- 1.5. 字典（Dictionary）
+    - 字典这个数据类型之所以叫做 Map（映射），是因为字典里的 key 都映射且只映射一个对应的 _value_。
+    - 1.5.1. 字典的生成 bDict = {'a':1, 'b':2, 'c':3}
+    - 1.5.2. 更新某个元素 phonebook1['joe'] = 5802
+    - 1.5.3. 添加元素 phonebook1.update( {'john':9876})
+    - 1.5.4. 删除某个元素 del phonebook1['ann']
+    - 1.5.5. 逻辑操作符 'stan' in phonebook1.keys()
+    - 1.5.6. 可用来操作的内建函数
+        -  len(phonebook1) 长度
+        -  max(phonebook1) 最大那个
+        -  min(phonebook1) 最小那个
+        -   list(phonebook1) 转成list
+        -   tuple(phonebook1) 转成tuple
+        -    set(phonebook1)  转成集合
+        -    sorted(phonebook1) 排序
+        -   sorted(phonebook1, reverse=True) 倒序
+    - 1.5.7. 常用 Methods
+        - .copy()
+        - .clear()
+        - .popitem()
+        - .pop('adam', 3538)
+        - .get('adam', 3538)
+        - .etdefault('adam', 3538)
+          
+    - 1.6. 迭代各种容器中的元素     
+### Part.1.E.7.files  
+这一章我们介绍了文本文件的基本操作：
+
+> * 打开文件，直接用内建函数，`open()`，基本模式有 `r` 和 `w`；
+> * 删除文件，得调用 `os` 模块，使用 `os.remove()`，删除文件前最好确认文件确实存在……
+> * 读写文件分别有 `file.read()`、`file.write()`、`file.readline()`、`file.readlines()`、`file.writelines()`；
+> * 可以用 `with` 把相关操作都放入同一个语句块……
+
+### Part.1.F.deal-with-forward-references
+>
+		
+
+    
